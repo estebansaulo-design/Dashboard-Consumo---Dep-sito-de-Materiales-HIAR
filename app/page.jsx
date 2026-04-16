@@ -1,4 +1,4 @@
-import DashboardConsumoInteractivo from "../dashboard";
+import DashboardConsumoInteractivo from "./dashboard";
 
 export const metadata = {
   title: "Dashboard del Ejercicio Económico | Depósito de Materiales SJ",

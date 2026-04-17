@@ -23,15 +23,15 @@ import { AlertTriangle, CalendarRange } from "lucide-react";
 /* ─── DATA ─────────────────────────────────────────────────────────────── */
 
 const monthly = [
-  { month: "Abr", fullMonth: "Abril",      pdg: 18360000,    consumo: 19703813,  ejecutado: 107.32 },
+  { month: "Abr", fullMonth: "Abril",      pdg: 18360000,    consumo: 26258928,  ejecutado: 143.02 },
   { month: "May", fullMonth: "Mayo",       pdg: 18640908,    consumo: 34740014,  ejecutado: 186.36 },
   { month: "Jun", fullMonth: "Junio",      pdg: 18941958.7,  consumo: 10804571,  ejecutado: 57.04  },
   { month: "Jul", fullMonth: "Julio",      pdg: 19245030,    consumo: 18807495,  ejecutado: 97.73  },
   { month: "Ago", fullMonth: "Agosto",     pdg: 19533705.5,  consumo: 24658827,  ejecutado: 126.24 },
   { month: "Sep", fullMonth: "Septiembre", pdg: 19826711,    consumo: 40771723,  ejecutado: 205.64 },
   { month: "Oct", fullMonth: "Octubre",    pdg: 20124111.7,  consumo: 51620308,  ejecutado: 256.51 },
-  { month: "Nov", fullMonth: "Noviembre",  pdg: 20415911.3,  consumo: 27995293,  ejecutado: 137.12 },
-  { month: "Dic", fullMonth: "Diciembre",  pdg: 20701734.1,  consumo: 26127138,  ejecutado: 126.21 },
+  { month: "Nov", fullMonth: "Noviembre",  pdg: 20415911.3,  consumo: 27990487,  ejecutado: 137.10 },
+  { month: "Dic", fullMonth: "Diciembre",  pdg: 20701734.1,  consumo: 26086287,  ejecutado: 126.01 },
   { month: "Ene", fullMonth: "Enero",      pdg: 20991558.4,  consumo: 36998924,  ejecutado: 176.26 },
   { month: "Feb", fullMonth: "Febrero",    pdg: 21285440.2,  consumo: 27044387,  ejecutado: 127.06 },
   { month: "Mar", fullMonth: "Marzo",      pdg: 21583436.3,  consumo: 72128903,  ejecutado: 334.19 },
@@ -56,187 +56,269 @@ const monthlyBreakdown = {
   Abr: {
     summary: "Abril mostró un consumo relativamente equilibrado, con predominio de Ingeniería Clínica y un peso menor de Mantenimiento y otros.",
     topItems: [
-      { name: "Ingeniería Clínica",    amount: 16892597.59, note: "Reposiciones y soporte técnico" },
-      { name: "Mantenimiento y otros", amount: 2811215.56,  note: "Operación general" },
+      { name: "Filtro absoluto AT 61×61×15 cm", amount: 7125316.88, note: "Equipamiento técnico" },
+      { name: "Cartel circular chapa galvanizada cochera", amount: 1100000.00, note: "Señalización" },
+      { name: "Cascote picado / escombro", amount: 752840.01, note: "Construcción" },
+      { name: "Adaptador cable ECG Schiller MS-12/FT-1", amount: 751647.81, note: "Instrumental médico" },
+      { name: "Mango PNI adulto Philips M1574A", amount: 735040.74, note: "Instrumental médico" },
+      { name: "Tensor de pared retráctil 5cm x 10m", amount: 673468.97, note: "Ferretería" },
     ],
     grouped: [
-      { name: "Ingeniería Clínica",    value: 16892597.59 },
-      { name: "Mantenimiento y otros", value: 2811215.56  },
+      { name: "Repuestos y refrig.", value: 7400715.81 },
+      { name: "Ferretería",          value: 3672290.67 },
+      { name: "Pinturas",            value: 3099402.43 },
+      { name: "Electricidad",        value: 1755307.56 },
+      { name: "Sanitarios",          value: 2281545.07 },
+      { name: "Rep. Instrumental",   value: 2811215.56 },
+      { name: "Mat. Construcción",   value: 2302341.30 },
+      { name: "Otros",               value: 2936110.16 },
     ],
   },
   May: {
-    summary: "En mayo se produjo uno de los primeros desvíos fuertes del ejercicio, con gran presión desde Mantenimiento y otros y un consumo ampliamente superior al PDG mensual.",
+    summary: "En mayo se produjo uno de los primeros desvíos fuertes del ejercicio, con gran presión desde Rep. Instrumental médico que concentró más del 55% del total.",
     topItems: [
-      { name: "Mantenimiento y otros", amount: 18734933, note: "Mayor peso mensual" },
-      { name: "Ingeniería Clínica",    amount: 14753145, note: "Demanda técnica"    },
+      { name: "Cable intermediario Masimo Radical 7", amount: 3304000.00, note: "Instrumental médico" },
+      { name: "Máscara total face Philips Performax S", amount: 2363130.00, note: "Instrumental médico" },
+      { name: "Máscara facial Philips Respironics Performax S", amount: 2363130.00, note: "Instrumental médico" },
+      { name: "Cable intermediario PI Edwards Mindray", amount: 1514198.36, note: "Instrumental médico" },
+      { name: "Cable calefactor Evaqua Fisher Paykel MR850", amount: 1487362.80, note: "Instrumental médico" },
+      { name: "Cable sensor temperatura 900MR861", amount: 1426902.19, note: "Instrumental médico" },
     ],
     grouped: [
-      { name: "Ingeniería Clínica",    value: 14753145 },
-      { name: "Mantenimiento y otros", value: 18734933 },
+      { name: "Rep. Instrumental",   value: 18734933 },
+      { name: "Rep. y Refrigeración",value: 5056074  },
+      { name: "Electricidad",        value: 1819725  },
+      { name: "Mat. Construcción",   value: 2486605  },
+      { name: "Sanitarios",          value: 1561761  },
+      { name: "Ferretería",          value: 2210199  },
+      { name: "Otros",               value: 2870717  },
     ],
   },
   Jun: {
     summary: "Junio fue el único mes claramente por debajo del PDG. El nivel de gasto fue bajo y el ejercicio mostró una pausa operativa relativa.",
     topItems: [
-      { name: "Ingeniería Clínica",    amount: 7404591, note: "Reposiciones puntuales" },
-      { name: "Mantenimiento y otros", amount: 3399980, note: "Mínimo operativo"       },
+      { name: "Lámpara Xenon Cermax ME300BF", amount: 1483000.00, note: "Instrumental médico" },
+      { name: "Barral rebatible baño discapacitado Inox 70cm", amount: 1417500.00, note: "Sanitarios" },
+      { name: "Cable intermediario Philips a Masimo DR Set", amount: 975450.00, note: "Instrumental médico" },
+      { name: "Lámpara dicroica 12x100 Philips 409737", amount: 824000.00, note: "Electricidad" },
+      { name: "Hidrolavadora inalámbrica Einhell 18V", amount: 496517.00, note: "Herramientas" },
+      { name: "Accesorio depósito-baño discapacitado FV Ferrum", amount: 383489.28, note: "Sanitarios" },
     ],
     grouped: [
-      { name: "Ingeniería Clínica",    value: 7404591 },
-      { name: "Mantenimiento y otros", value: 3399980 },
+      { name: "Ferretería",          value: 2417829 },
+      { name: "Electricidad",        value: 1549427 },
+      { name: "Sanitarios",          value: 1204416 },
+      { name: "Rep. Instrumental",   value: 2458450 + 941530 },
+      { name: "Rep. y Refrigeración",value: 985766  },
+      { name: "Herramientas",        value: 612441  },
+      { name: "Otros",               value: 634702  },
     ],
   },
   Jul: {
     summary: "Julio mostró un repunte respecto a junio, aunque dentro de parámetros más razonables y con una distribución operativa habitual.",
     topItems: [
-      { name: "Electricidad",             amount: 4180277, note: "22,2% del mes" },
-      { name: "Rep. Instrumental médico", amount: 3449880, note: "18,3% del mes" },
-      { name: "Ferretería",               amount: 3277585, note: "17,4% del mes" },
+      { name: "Luminaria alumbrado público 150W Lumenac", amount: 2006503.20, note: "Electricidad" },
+      { name: "Lámpara Xenon Osram XBO R 100W/45C", amount: 1290000.00, note: "Instrumental médico" },
+      { name: "Silikote desmoldante 33%", amount: 905231.29, note: "Materiales de construcción" },
+      { name: "Sensor SpO2 pediátrico M1192A", amount: 864647.42, note: "Instrumental médico" },
+      { name: "Cascote picado / escombro", amount: 790500.01, note: "Construcción" },
+      { name: "Atornilladora Bosch GSR 180 18V", amount: 766245.61, note: "Herramientas" },
     ],
     grouped: [
-      { name: "Electricidad",     value: 4180277 },
-      { name: "Rep. instrumental",value: 3449880 },
-      { name: "Ferretería",       value: 3277585 },
-      { name: "Otros",            value: 18807495 - 4180277 - 3449880 - 3277585 },
+      { name: "Electricidad",        value: 4180277 },
+      { name: "Rep. Instrumental",   value: 3449880 },
+      { name: "Ferretería",          value: 3274872 },
+      { name: "Mat. Construcción",   value: 1722885 },
+      { name: "Sanitarios",          value: 1690220 },
+      { name: "Maderas",             value: 1387526 },
+      { name: "Otros",               value: 3101835 },
     ],
   },
   Ago: {
-    summary: "Agosto combinó sobreejecución con egresos extraordinarios en construcción, especialmente vinculados a la reparación de veredas.",
+    summary: "Agosto combinó sobreejecución con egresos extraordinarios en construcción y sanitarios, con Ferretería y Mat. Construcción liderando el gasto.",
     topItems: [
-      { name: "Materiales de construcción", amount: 6156858, note: "Reparación de veredas" },
-      { name: "Rep. Instrumental médico",   amount: 4084530, note: "16,6% del mes"         },
-      { name: "Ferretería",                 amount: 3810054, note: "15,5% del mes"          },
-      { name: "Sanitarios",                 amount: 3244455, note: "13,2% del mes"          },
+      { name: "Weber Dur mortero reparador hormigón 25kg", amount: 3610002.48, note: "Materiales de construcción" },
+      { name: "Mango PNI M1576A Philips", amount: 2148400.00, note: "Instrumental médico" },
+      { name: "Barral rebatible baño discapacitado Inox 70cm", amount: 1516804.80, note: "Sanitarios" },
+      { name: "Tensiometro de pared", amount: 949622.61, note: "Instrumental médico" },
+      { name: "Terminal puntera Pawling medialuna beige 20cm", amount: 780000.00, note: "Ferretería" },
+      { name: "Brazalete Welch Allyn reusable adulto 25-34cm", amount: 732487.00, note: "Instrumental médico" },
     ],
     grouped: [
-      { name: "Construcción",    value: 6156858 },
-      { name: "Rep. instrumental",value: 4084530 },
-      { name: "Ferretería",      value: 3810054 },
-      { name: "Sanitarios",      value: 3244455 },
-      { name: "Otros",           value: 24658827 - 6156858 - 4084530 - 3810054 - 3244455 },
+      { name: "Ferretería",          value: 5316291 },
+      { name: "Mat. Construcción",   value: 4612133 },
+      { name: "Sanitarios",          value: 3254096 },
+      { name: "Rep. Instrumental",   value: 3134907 + 949623 },
+      { name: "Pinturas",            value: 1335188 },
+      { name: "Electricidad",        value: 1970240 },
+      { name: "Rep. y Refrigeración",value: 2188129 },
+      { name: "Otros",               value: 2898220 },
     ],
   },
   Sep: {
-    summary: "Septiembre marcó un salto fuerte en el ejercicio, con concentración en repuestos de Ingeniería Clínica y equipamiento de diagnóstico.",
+    summary: "Septiembre marcó un salto fuerte en el ejercicio, con concentración en pantoscopios, sensores SpO2 y repuestos de Ingeniería Clínica.",
     topItems: [
-      { name: "Rep. Instrumental médico",   amount: 11761580, note: "27,5% del mes" },
-      { name: "Equip. de diagnóstico",      amount: 8109660,  note: "18,9% del mes" },
-      { name: "Rep. varios y refrigeración",amount: 5354230,  note: "12,5% del mes" },
+      { name: "Pantoscopios Welch Allyn 77716 (de pared)", amount: 8109660.00, note: "Equip. de diagnóstico" },
+      { name: "Sensor SpO2 adulto Philips M1191BL", amount: 6816239.67, note: "Instrumental médico" },
+      { name: "Gas Oil Euro", amount: 2314373.32, note: "Combustible" },
+      { name: "Lámpara Welch Allyn 03100", amount: 2115236.28, note: "Instrumental médico" },
+      { name: "Extractor aire industrial 4\" conductos", amount: 1292152.07, note: "Infraestructura" },
+      { name: "Multímetro Fluke 117", amount: 1027015.00, note: "Herramientas" },
     ],
     grouped: [
-      { name: "Rep. instrumental", value: 11761580 },
-      { name: "Equip. diagnóstico",value: 8109660  },
-      { name: "Refrigeración",     value: 5354230  },
-      { name: "Otros",             value: 40771723 - 11761580 - 8109660 - 5354230 },
+      { name: "Rep. Instrumental",   value: 11761580 },
+      { name: "Equip. diagnóstico",  value: 8109660  },
+      { name: "Rep. y Refrigeración",value: 5580546  },
+      { name: "Mat. Construcción",   value: 3200612  },
+      { name: "Sanitarios",          value: 3070520  },
+      { name: "Electricidad",        value: 2295143  },
+      { name: "Herramientas",        value: 1997961  },
+      { name: "Combustible",         value: 2314373  },
+      { name: "Otros",               value: 2441328  },
     ],
   },
   Oct: {
-    summary: "Octubre fue el pico del ejercicio, impulsado por adquisiciones extraordinarias de alto costo y necesidades técnicas acumuladas.",
+    summary: "Octubre fue el pico del ejercicio, impulsado por pantoscopios, manómetros y repuestos de alta complejidad técnica.",
     topItems: [
-      { name: "Rep. Instrumental médico",   amount: 11062362, note: "21,4% del mes"      },
-      { name: "Rep. varios y refrigeración",amount: 6805887,  note: "13,2% del mes"      },
-      { name: "Equip. de diagnóstico",      amount: 5406440,  note: "10,5% del mes"      },
-      { name: "Ferretería",                 amount: 5432073,  note: "Alto peso operativo" },
-      { name: "Mat. construcción",          amount: 5676621,  note: "Obras y mantenimiento"},
+      { name: "Pantoscopios Welch Allyn 77716 (de pared)", amount: 5406440.00, note: "Equip. de diagnóstico" },
+      { name: "Manómetro Dwyer Magnehelic 30/3/30 PA", amount: 4505010.05, note: "Instrumental médico" },
+      { name: "Cable ECG 5 deriv. Philips M1973A", amount: 2519853.00, note: "Instrumental médico" },
+      { name: "Latiguillo 5 derivaciones Mindray", amount: 1550241.40, note: "Instrumental médico" },
+      { name: "Batería Nihon Kohden NKB-301V X065", amount: 1544250.00, note: "Instrumental médico" },
+      { name: "Acrílico transparente 4mm 2,44x1,30m", amount: 1495080.00, note: "Materiales" },
     ],
     grouped: [
-      { name: "Rep. instrumental", value: 11062362 },
-      { name: "Refrigeración",     value: 6805887  },
-      { name: "Equip. diagnóstico",value: 5406440  },
-      { name: "Ferretería",        value: 5432073  },
-      { name: "Construcción",      value: 5676621  },
-      { name: "Otros",             value: 51620308 - 11062362 - 6805887 - 5406440 - 5432073 - 5676621 },
+      { name: "Rep. Instrumental",   value: 11062362 },
+      { name: "Rep. y Refrigeración",value: 6805887  },
+      { name: "Equip. diagnóstico",  value: 5406440  },
+      { name: "Ferretería",          value: 5432073  },
+      { name: "Mat. Construcción",   value: 5676621  },
+      { name: "Electricidad",        value: 5158692  },
+      { name: "Maderas",             value: 4008563  },
+      { name: "Herramientas",        value: 3510110  },
+      { name: "Otros",               value: 9077560  },
     ],
   },
   Nov: {
-    summary: "Noviembre mostró una baja relevante respecto a octubre, aunque siguió por encima del PDG. Pesaron herramientas, refrigeración y combustible.",
+    summary: "Noviembre mostró una baja relevante respecto a octubre, aunque siguió por encima del PDG. Pesaron combustible, filtros y adaptadores de señales.",
     topItems: [
-      { name: "Rep. Instrumental médico",   amount: 6755124, note: "24,1% del mes"  },
-      { name: "Herramientas",               amount: 4386280, note: "15,7% del mes"  },
-      { name: "Rep. varios y refrigeración",amount: 4307289, note: "15,4% del mes"  },
-      { name: "Combustible",                amount: 3955492, note: "Consumo puntual" },
-      { name: "Electricidad",               amount: 3551371, note: "12,7% del mes"  },
+      { name: "Gas Oil Euro", amount: 3576092.40, note: "Combustible" },
+      { name: "Filtro permanganato de potasio 600x500x48mm", amount: 2266830.00, note: "Equipamiento técnico" },
+      { name: "Adaptador cable ECG Schiller MS-12/FT-1", amount: 1524290.04, note: "Instrumental médico" },
+      { name: "Electrodo ECG cable 1,5m copa oro Touch Proof", amount: 1430000.00, note: "Instrumental médico" },
+      { name: "Sensor respiratorio abdominal Neurovirtual SM", amount: 1428840.00, note: "Instrumental médico" },
+      { name: "Electrodo EEG cable 80cm Touch Proof Barra Roberto", amount: 1360000.00, note: "Instrumental médico" },
     ],
     grouped: [
-      { name: "Rep. instrumental", value: 6755124 },
-      { name: "Herramientas",      value: 4386280 },
-      { name: "Refrigeración",     value: 4307289 },
-      { name: "Combustible",       value: 3955492 },
-      { name: "Electricidad",      value: 3551371 },
-      { name: "Otros",             value: 27995293 - 6755124 - 4386280 - 4307289 - 3955492 - 3551371 },
+      { name: "Rep. Instrumental",   value: 6755124 },
+      { name: "Herramientas",        value: 4386280 },
+      { name: "Rep. y Refrigeración",value: 4313119 },
+      { name: "Combustible",         value: 3955492 },
+      { name: "Electricidad",        value: 3540735 },
+      { name: "Ferretería",          value: 3493380 },
+      { name: "Sanitarios",          value: 1072730 },
+      { name: "Otros",               value: 473627  },
     ],
   },
   Dic: {
     summary: "Desde diciembre se produce el cruce entre sectores: Mantenimiento y otros pasa a consumir más que Ingeniería Clínica, explicado por obras e infraestructura.",
     topItems: [
-      { name: "Mantenimiento y otros", amount: 19102688, note: "Inicio del cambio de tendencia" },
-      { name: "Ingeniería Clínica",    amount: 7024450,  note: "Menor peso relativo"           },
+      { name: "Gas Oil Euro", amount: 2541234.29, note: "Combustible" },
+      { name: "Cable Sintenax 5×25 IMSA-Pirelli", amount: 1674545.60, note: "Electricidad" },
+      { name: "Sensor buconasal Neurovirtual SI1035 (neonatal)", amount: 1598400.00, note: "Instrumental médico" },
+      { name: "Sensor respiratorio toracico Neurovirtual SI2123", amount: 1420800.00, note: "Instrumental médico" },
+      { name: "Sensor buconasal Neurovirtual SI1262 (pediátrico)", amount: 1287600.00, note: "Instrumental médico" },
+      { name: "Manómetro digital Value VDG-1", amount: 1125180.00, note: "Instrumental médico" },
     ],
     grouped: [
-      { name: "Mantenimiento y otros", value: 19102688 },
-      { name: "Ingeniería Clínica",    value: 7024450  },
+      { name: "Rep. Instrumental",   value: 7024450 },
+      { name: "Electricidad",        value: 5393404 },
+      { name: "Herramientas",        value: 3763920 },
+      { name: "Combustible",         value: 3038837 },
+      { name: "Sanitarios",          value: 2399308 },
+      { name: "Ferretería",          value: 2431721 },
+      { name: "Rep. y Refrigeración",value: 1498528 },
+      { name: "Otros",               value: 536119  },
     ],
   },
   Ene: {
     summary: "Enero sostuvo la presión presupuestaria por materiales de obra, electricidad y construcción, consolidando el predominio de Mantenimiento y otros.",
     topItems: [
-      { name: "Mantenimiento y otros", amount: 28770066, note: "Predominio por obras e infraestructura" },
-      { name: "Ingeniería Clínica",    amount: 8228858,  note: "Recambio técnico puntual"              },
+      { name: "Filtro aire Sun Pure (Air Filter Assembly UV)", amount: 6019200.00, note: "Equipamiento técnico" },
+      { name: "Tosca x metro a granel", amount: 2454646.15, note: "Materiales de construcción" },
+      { name: "Artefacto emergencia LED Atomlux 8091 dos faros", amount: 1921153.85, note: "Electricidad" },
+      { name: "Cable Afumex Prysmian 4×6mm", amount: 1852500.00, note: "Electricidad" },
+      { name: "Weber Dur mortero reparador hormigón 25kg", amount: 1832837.72, note: "Materiales de construcción" },
+      { name: "Filtro H13 2424.12\" HEPA absolutos", amount: 1644461.95, note: "Equipamiento técnico" },
     ],
     grouped: [
-      { name: "Mantenimiento y otros", value: 28770066 },
-      { name: "Ingeniería Clínica",    value: 8228858  },
+      { name: "Rep. Instrumental",   value: 7572566 },
+      { name: "Mat. Construcción",   value: 8114335 },
+      { name: "Electricidad",        value: 7340338 },
+      { name: "Sanitarios",          value: 3672020 },
+      { name: "Rep. y Refrigeración",value: 3078318 },
+      { name: "Ferretería",          value: 3606287 },
+      { name: "Herramientas",        value: 1237070 },
+      { name: "Equip. diagnóstico",  value: 656292  },
+      { name: "Maderas",             value: 1579490 },
+      { name: "Otros",               value: 142208  },
     ],
   },
   Feb: {
-    summary: "Predominaron consumos ligados a mantenimiento general, reposición de repuestos y soporte operativo hospitalario.",
+    summary: "Predominaron consumos ligados a equipamiento de diagnóstico, electricidad y sanitarios, con fuerte peso en Mantenimiento y otros.",
     topItems: [
-      { name: "Equip. de diagnóstico",      amount: 8114797, note: "Equipamiento hospitalario" },
-      { name: "Electricidad",               amount: 5458135, note: "Materiales eléctricos"     },
-      { name: "Sanitarios",                 amount: 4113285, note: "Mantenimiento edilicio"    },
-      { name: "Ferretería",                 amount: 3013483, note: "Reparaciones generales"    },
-      { name: "Rep. varios y refrigeración",amount: 2081186, note: "Climatización y soporte"   },
+      { name: "Pantoscopios Welch Allyn 77716 (de pared)", amount: 8114796.90, note: "Equip. de diagnóstico" },
+      { name: "Rueda plástica hospitalaria Hofer Stilus 75mm", amount: 1894860.00, note: "Equipamiento hospitalario" },
+      { name: "Weber Dur mortero reparador hormigón 25kg", amount: 1787011.20, note: "Materiales de construcción" },
+      { name: "Inodoro vertedero Ferrum SVA-IN-014-BL", amount: 1401424.50, note: "Sanitarios" },
+      { name: "Termómetro digital heladera TFA-LT102", amount: 1045756.63, note: "Instrumental médico" },
+      { name: "Repartidor bornera bipolar 15 conexiones 125A", amount: 759599.10, note: "Electricidad" },
     ],
     grouped: [
-      { name: "Equip. diagnóstico", value: 8114797 },
-      { name: "Electricidad",       value: 5458135 },
-      { name: "Sanitarios",         value: 4113285 },
-      { name: "Ferretería",         value: 3013483 },
-      { name: "Otros",              value: 6274487 },
+      { name: "Equip. diagnóstico",  value: 8114797 },
+      { name: "Electricidad",        value: 5453804 },
+      { name: "Sanitarios",          value: 4113285 },
+      { name: "Ferretería",          value: 3013483 },
+      { name: "Mat. Construcción",   value: 1942231 },
+      { name: "Rep. y Refrigeración",value: 2085516 },
+      { name: "Rep. Instrumental",   value: 1045757 },
+      { name: "Pinturas",            value: 581271  },
+      { name: "Herramientas",        value: 694243  },
     ],
   },
   Mar: {
     summary: "Marzo concentró consumos extraordinarios vinculados a pantoscopios remanentes, estacionamiento, muebles y obra del pabellón Devoto.",
     topItems: [
-      { name: "Pantoscopios de pared",         amount: 16229594, note: "Recambio remanente"   },
-      { name: "Tosca a granel",                amount: 8846400,  note: "Estacionamiento"      },
-      { name: "Chapa semilla melón 1/4",       amount: 6713889,  note: "Estacionamiento"      },
-      { name: "Chapa semilla melón 5/8",       amount: 1361390,  note: "Estacionamiento"      },
-      { name: "Placa enchapado en cedro 25mm", amount: 1267320,  note: "Muebles"              },
-      { name: "Placa enchapado en cedro 18mm", amount: 1050000,  note: "Muebles"              },
-      { name: "Artefacto emergencia LED",      amount: 1140656,  note: "Material eléctrico"   },
-      { name: "Gabinete tablero",              amount: 1101293,  note: "Pabellón Devoto"      },
-      { name: "Amoladora inalámbrica",         amount: 1005177,  note: "Herramientas"         },
+      { name: "Pantoscopios Welch Allyn 77716 (de pared)", amount: 16229593.80, note: "Equip. de diagnóstico" },
+      { name: "Tosca x metro a granel", amount: 8846400.00, note: "Estacionamiento" },
+      { name: "Chapa hierro semilla melón 1/4", amount: 6713888.54, note: "Estacionamiento" },
+      { name: "Chapa hierro semilla melón 5/8", amount: 1361390.00, note: "Estacionamiento" },
+      { name: "Placa enchapado en cedro 25mm sobre MDF", amount: 1267320.00, note: "Muebles / Maderas" },
+      { name: "Artefacto emergencia LED Atomlux 8091 dos faros", amount: 1140656.40, note: "Material eléctrico" },
     ],
     grouped: [
-      { name: "Pantoscopios",       value: 16229594 },
-      { name: "Estacionamiento",    value: 16921789 },
-      { name: "Maderas / muebles",  value: 2317320  },
-      { name: "Mat. eléctricos",    value: 2241949  },
-      { name: "Herramientas",       value: 1005177  },
+      { name: "Equip. diagnóstico",  value: 16229594 },
+      { name: "Mat. Construcción",   value: 19151305 },
+      { name: "Electricidad",        value: 9980943  },
+      { name: "Rep. y Refrigeración",value: 8204128  },
+      { name: "Herramientas",        value: 6679930  },
+      { name: "Ferretería",          value: 4323958  },
+      { name: "Maderas",             value: 3207189  },
+      { name: "Pinturas",            value: 1217728  },
+      { name: "Otros",               value: 3134128  },
     ],
   },
 };
 
 const monthConclusions = {
-  Abr: "Abril mostró un inicio exigente del ejercicio, con predominio de consumos técnicos y un nivel apenas superior al PDG mensual.",
-  May: "Mayo fue uno de los primeros meses con desvío fuerte, impulsado sobre todo por Ingeniería Clínica y una demanda alta de repuestos específicos.",
+  Abr: "Abril mostró un inicio exigente del ejercicio, con predominio de consumos técnicos y un nivel ampliamente superior al PDG mensual, impulsado por filtros de alta temperatura y materiales de construcción.",
+  May: "Mayo fue uno de los primeros meses con desvío fuerte, impulsado sobre todo por Rep. Instrumental médico que representó más del 55% del consumo total.",
   Jun: "Junio funcionó como un mes de alivio presupuestario, con consumo por debajo del PDG y una baja general de la actividad.",
   Jul: "Julio mostró un repunte respecto a junio, aunque dentro de parámetros más razonables y con una distribución operativa habitual.",
-  Ago: "Agosto volvió a tensionar el presupuesto por egresos extraordinarios vinculados a infraestructura y materiales de construcción.",
-  Sep: "Septiembre marcó un salto importante, con fuerte peso de instrumental médico y equipamiento de diagnóstico.",
+  Ago: "Agosto volvió a tensionar el presupuesto por egresos extraordinarios vinculados a infraestructura, ferretería y materiales de construcción.",
+  Sep: "Septiembre marcó un salto importante, con fuerte peso de pantoscopios, sensores SpO2 e instrumental médico de alta complejidad.",
   Oct: "Octubre fue el pico del ejercicio, con adquisiciones extraordinarias y necesidades técnicas acumuladas que llevaron el consumo a su máximo hasta ese momento.",
-  Nov: "Noviembre mostró una moderación respecto a octubre, aunque siguió por encima del PDG y con fuerte peso de herramientas, refrigeración y combustible.",
+  Nov: "Noviembre mostró una moderación respecto a octubre, aunque siguió por encima del PDG y con fuerte peso de combustible, herramientas y refrig.",
   Dic: "En diciembre comenzó a verse el cambio de patrón: Mantenimiento y otros pasó a explicar una mayor parte del consumo por obras e infraestructura.",
   Ene: "Enero sostuvo la presión presupuestaria por materiales de obra, electricidad y construcción, consolidando el predominio de Mantenimiento y otros.",
   Feb: "Febrero mantuvo un nivel alto de consumo, con protagonismo de equipamiento de diagnóstico, electricidad y sanitarios.",
@@ -248,7 +330,7 @@ const monthConclusions = {
 const totalPartida = 239650505.1;
 const monthOrder   = monthly.map((m) => m.month);
 const defaultMonth = "Feb";
-const COLORS = ["#3b82f6","#ef4444","#f59e0b","#10b981","#8b5cf6","#14b8a6","#f97316"];
+const COLORS = ["#3b82f6","#ef4444","#f59e0b","#10b981","#8b5cf6","#14b8a6","#f97316","#ec4899","#a3e635"];
 
 const fmtMoney = (n) =>
   new Intl.NumberFormat("es-AR", {
@@ -260,9 +342,9 @@ const fmtMoney = (n) =>
 const fmtPct = (n) => `${n.toFixed(1)}%`;
 
 function getReading(monthData) {
-  if (monthData.ejecutado >= 130) return { label: "Muy por encima del PDG", cls: "badge-red"    };
-  if (monthData.ejecutado >= 100) return { label: "Por encima del PDG",     cls: "badge-amber"  };
-  return                                 { label: "Dentro del PDG",         cls: "badge-green"  };
+  if (monthData.ejecutado >= 130) return { label: "Muy por encima del PDG", cls: "badge-red"   };
+  if (monthData.ejecutado >= 100) return { label: "Por encima del PDG",     cls: "badge-amber" };
+  return                                 { label: "Dentro del PDG",         cls: "badge-green" };
 }
 
 /* ─── CUSTOM TOOLTIP ────────────────────────────────────────────────────── */
@@ -283,8 +365,8 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 /* ─── PROGRESS BAR ──────────────────────────────────────────────────────── */
 
-const ProgressBar = ({ value, max = 100 }) => {
-  const pct = Math.min((value / max) * 100, 100);
+const ProgressBar = ({ value }) => {
+  const pct = Math.min(value, 100);
   return (
     <div className="progress-track">
       <div className="progress-fill" style={{ width: `${pct}%` }} />
@@ -298,11 +380,11 @@ export default function DashboardConsumoInteractivo() {
   const [selectedMonth, setSelectedMonth] = useState(defaultMonth);
   const [open, setOpen] = useState(false);
 
-  const selectedIndex   = monthOrder.indexOf(selectedMonth);
-  const currentMonth    = monthly[selectedIndex];
-  const currentClients  = internalClients[selectedIndex];
-  const currentBreakdown= monthlyBreakdown[selectedMonth];
-  const currentConclusion = monthConclusions[selectedMonth];
+  const selectedIndex    = monthOrder.indexOf(selectedMonth);
+  const currentMonth     = monthly[selectedIndex];
+  const currentClients   = internalClients[selectedIndex];
+  const currentBreakdown = monthlyBreakdown[selectedMonth];
+  const currentConclusion= monthConclusions[selectedMonth];
 
   const consumedToDate = useMemo(
     () => monthly.slice(0, selectedIndex + 1).reduce((a, r) => a + r.consumo, 0),
@@ -468,8 +550,8 @@ export default function DashboardConsumoInteractivo() {
                 <Tooltip content={<CustomTooltip />} />
                 <Legend wrapperStyle={{ color: "#94a3b8", fontSize: "13px", paddingTop: "12px" }} />
                 <ReferenceLine x={selectedMonth} stroke="#e2e8f0" strokeDasharray="4 4" strokeOpacity={0.4} />
-                <Line type="monotone" dataKey="ing"  name="Ing. Clínica"    stroke="#3b82f6" strokeWidth={2.5} dot={false} />
-                <Line type="monotone" dataKey="mant" name="Mant. y otros"   stroke="#ef4444" strokeWidth={2.5} dot={false} />
+                <Line type="monotone" dataKey="ing"  name="Ing. Clínica"  stroke="#3b82f6" strokeWidth={2.5} dot={false} />
+                <Line type="monotone" dataKey="mant" name="Mant. y otros" stroke="#ef4444" strokeWidth={2.5} dot={false} />
               </LineChart>
             </ResponsiveContainer>
           </div>
